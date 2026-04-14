@@ -1,131 +1,191 @@
 /* ===============================
-   HERO & BANNER BASE STYLE
+   RESET
 ================================ */
-
-#hero{
-  background-image: url("22.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 90vh;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
 }
 
-#banner{
-  background-image: url("clothiq banner.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 40vh;
+body{
+  width:100%;
 }
-
 
 /* ===============================
-   RESPONSIVE CSS - ALL IN ONE
+   HEADER
+================================ */
+#header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:20px 80px;
+  background:#fff;
+}
+
+.logo{
+  width:160px;
+}
+
+#navbar{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+#navbar li{
+  list-style:none;
+  padding:0 20px;
+}
+
+#navbar li a{
+  text-decoration:none;
+  font-size:16px;
+  font-weight:600;
+  color:#1a1a1a;
+}
+
+/* ===============================
+   HERO
+================================ */
+#hero{
+  background-image:url("22.png");
+  height:90vh;
+  width:100%;
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:center;
+  padding:0 80px;
+}
+
+#hero h1{
+  font-size:50px;
+}
+
+#hero h2{
+  font-size:40px;
+}
+
+#hero p{
+  font-size:18px;
+}
+
+/* ===============================
+   FEATURES
+================================ */
+#feature{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
+
+#feature .fe-box{
+  width:180px;
+  text-align:center;
+  padding:20px;
+}
+
+/* ===============================
+   PRODUCTS
+================================ */
+.pro-container{
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
+
+.pro{
+  width:23%;
+  min-width:250px;
+  padding:10px;
+}
+
+/* ===============================
+   BANNER
+================================ */
+#banner{
+  background-image:url("clothiq banner.png");
+  width:100%;
+  height:40vh;
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+/* ===============================
+   FOOTER
+================================ */
+.footer-container{
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
+
+/* ===============================
+   RESPONSIVE
 ================================ */
 
-/* Large Laptop */
-@media (max-width:1200px){
-
-  #header{
-    padding:20px 40px;
-  }
+/* Laptop */
+@media(max-width:1200px){
 
   #hero{
-    padding:0 40px;
     height:80vh;
+    padding:0 40px;
   }
 
-  #product1 .pro,
-  #product2 .pro{
+  .pro{
     width:30%;
   }
 
 }
 
-
 /* Tablet */
-@media (max-width:992px){
+@media(max-width:992px){
 
   #header{
     padding:15px 30px;
   }
 
   #hero{
-    padding:0 30px;
     height:70vh;
-    background-position: top;
+    padding:0 30px;
+    background-position:top;
   }
 
   #banner{
     height:35vh;
   }
 
-  #feature{
-    justify-content:center;
-  }
-
-  #feature .fe-box{
-    width:30%;
-    margin:10px;
-  }
-
-  #product1 .pro,
-  #product2 .pro{
+  .pro{
     width:45%;
-  }
-
-  #sm-banner{
-    flex-direction:column;
-  }
-
-  #sm-banner .banner-box{
-    width:100%;
-    margin-bottom:20px;
-  }
-
-  #early-access .form{
-    width:70%;
   }
 
 }
 
-
 /* Mobile */
-@media (max-width:768px){
+@media(max-width:768px){
 
   #header{
-    padding:10px 20px;
     flex-direction:column;
-    height:auto;
-  }
-
-  img.logo{
-    width:140px;
-    margin-left:0;
+    padding:10px 20px;
   }
 
   #navbar{
     flex-direction:column;
-    width:100%;
-    margin-right:0;
-    padding-top:10px;
-  }
-
-  #navbar li{
-    padding:10px 0;
   }
 
   #hero{
-    padding:0 20px;
     height:60vh;
+    padding:0 20px;
     text-align:center;
-    background-position: top;
-  }
-
-  #banner{
-    height:25vh;
+    background-position:top;
   }
 
   #hero h1{
@@ -140,41 +200,16 @@
     font-size:14px;
   }
 
-  .section-p1{
-    padding:20px;
+  #banner{
+    height:25vh;
   }
 
-  #feature{
-    justify-content:center;
+  .pro{
+    width:100%;
   }
 
   #feature .fe-box{
     width:45%;
-    margin:10px;
-  }
-
-  #product1 .pro,
-  #product2 .pro{
-    width:100%;
-  }
-
-  #sm-banner{
-    flex-direction:column;
-  }
-
-  #sm-banner .banner-box{
-    width:100%;
-    height:40vh;
-  }
-
-  #early-access{
-    flex-direction:column;
-    text-align:center;
-  }
-
-  #early-access .form{
-    width:100%;
-    margin-top:15px;
   }
 
   .footer-container{
@@ -183,9 +218,8 @@
 
 }
 
-
 /* Small Mobile */
-@media (max-width:480px){
+@media(max-width:480px){
 
   #hero{
     height:50vh;
@@ -195,27 +229,11 @@
     height:22vh;
   }
 
-  #hero h1{
-    font-size:26px;
-  }
-
-  #hero h2{
-    font-size:22px;
-  }
-
-  #hero h4{
-    font-size:14px;
-  }
-
   #feature .fe-box{
     width:100%;
   }
 
-  #header{
-    padding:8px 15px;
-  }
-
-  img.logo{
+  .logo{
     width:120px;
   }
 
